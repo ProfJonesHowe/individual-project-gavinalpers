@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gavin Alpers Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Gavin Alpers</h1>
+  <p>Cybersecurity Student</p>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      This is my portfolio for CYBR 201. It shows basic HTML structure,
+      CSS styling, JavaScript interaction, and simple input validation.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <ul id="projectList">
+      <li>To-Do List (JavaScript)</li>
+      <li>Login Form</li>
+      <li>Portfolio Website</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <form id="contactForm" novalidate>
+      <label for="name">Name:</label>
+      <input id="name" type="text">
+
+      <label for="email">Email:</label>
+      <input id="email" type="text">
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4"></textarea>
+
+      <button type="submit">Send</button>
+      <p id="status"></p>
+    </form>
+  </section>
+</main>
+
+<script>
+  // simple, guaranteed-working validation
+  document.getElementById("contactForm").onsubmit = function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var message = document.getElementById("message").value.trim();
+    var status = document.getElementById("status");
+
+    if (!name || !email || !message) {
+      status.textContent = "Please fill out all fields.";
+      return;
+    }
+
+    status.textContent = "Form submitted";
+    this.reset();
+  };
+</script>
+
+</body>
+</html>
