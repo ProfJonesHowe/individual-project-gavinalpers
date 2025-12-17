@@ -7,13 +7,13 @@ btn.onclick = function () {
   list.style.display = list.style.display === "none" ? "block" : "none";
 };
 
-document.getElementById(// show current year (safe even if footer is missing)
+document.getElementById()
 var year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-// show / hide projects ONLY if button exists
+
 var btn = document.getElementById("toggleProjects");
 var list = document.getElementById("projectList");
 
@@ -23,7 +23,7 @@ if (btn && list) {
   };
 }
 
-// contact form validation (this is the important part)
+
 var form = document.getElementById("contactForm");
 var status = document.getElementById("status");
 
@@ -61,3 +61,4 @@ if (form && status) {
   status.textContent = "Form submitted (demo).";
   this.reset();
 };
+
